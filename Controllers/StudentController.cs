@@ -9,12 +9,12 @@ namespace UnitOfWork.Controllers
     [ApiController]
     public class StudentController : ControllerBase
     {
-        private readonly IUnitOfWork unitOfWork;
+        private readonly IStudentService _studentService;
 
-        public StudentController(IUnitOfWork _unitOfWork )
+        public StudentController(IStudentService studentService)
+
         {
-            unitOfWork = _unitOfWork;
-            
+            _studentService = studentService;
         }
 
         [HttpPost]
@@ -22,30 +22,9 @@ namespace UnitOfWork.Controllers
         public Student AddStudent(Student student)
         {
 
-            unitOfWork.StudentService.AddStudent(student);
+            var Student1 = _studentService.AddStudent(student);
 
-            return student;
-        }
-
-
-        [HttpGet]
-        public IActionResult GetStudent(int id)
-        {
-            var student = unitOfWork.StudentService.GetStudent(id);
-
-            if (student == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(student);
-        }
-        [HttpGet]
-
-        public List<Student> Students()
-        {
-
-            return unitOfWork.StudentService.GetStudents();
+            return Student1;
         }
     }
 }

@@ -5,7 +5,7 @@
 namespace UnitOfWork.Migrations
 {
     /// <inheritdoc />
-    public partial class Student : Migration
+    public partial class Students : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

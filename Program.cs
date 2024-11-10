@@ -1,7 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
 using UnitOfWork.Data;
-using UnitOfWork.Repository.Implementations;
 using UnitOfWork.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +17,10 @@ builder.Services.AddDbContext<StudentContext>(options =>
 });
 
 builder.Services.AddScoped<IStudentService, StudentService>();
-builder.Services.AddScoped<IUnitOfWork, WorkOfUnit>();
+builder.Services.AddScoped<IMarks, MarkService>();
+builder.Services.AddScoped<All, AllService>();
+
+
 
 
 

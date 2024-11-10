@@ -11,8 +11,8 @@ using UnitOfWork.Data;
 namespace UnitOfWork.Migrations
 {
     [DbContext(typeof(StudentContext))]
-    [Migration("20241025204144_Student")]
-    partial class Student
+    [Migration("20241109233450_Students")]
+    partial class Students
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

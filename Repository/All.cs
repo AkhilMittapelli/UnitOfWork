@@ -1,9 +1,10 @@
 ﻿namespace UnitOfWork.Repository
 {
-    public interface IUnitOfWork
-    {
+    public interface All
+
+    { 
         IStudentService StudentService { get; }
 
-        
+        IMarks  MarkService { get; }
     }
 }
